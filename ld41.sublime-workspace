@@ -1,0 +1,425 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"foreach"
+			],
+			[
+				"four",
+				"fourstone"
+			],
+			[
+				"argmin",
+				"argminx"
+			],
+			[
+				"_b",
+				"_bsize"
+			],
+			[
+				"fo",
+				"forpairs\tfor-in-pairs"
+			],
+			[
+				"print",
+				"print_table"
+			],
+			[
+				"feature",
+				"feature_sprites"
+			],
+			[
+				"sp",
+				"spr"
+			],
+			[
+				"left",
+				"left_idx"
+			],
+			[
+				"delta",
+				"deltaOrientation"
+			],
+			[
+				"cursor",
+				"cursor-obj"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/PICO-8.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/PICO-8.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "pi",
+		"selected_items":
+		[
+			[
+				"pi",
+				"PICO-8: Run Cartridge"
+			],
+			[
+				"PICO",
+				"PICO-8: Browse BBS"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Install Package Control"
+			]
+		],
+		"width": 440.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/dev/unity/ld41/Assets"
+	],
+	"file_history":
+	[
+		"/C/dev/unity/procadia2017/Assets/shaders/reveal_good.shader",
+		"/C/dev/unity/procadia2017/Assets/shaders/reveal.shader",
+		"/C/dev/unity/procadia2017/Assets/hard/Pooled.cs",
+		"/C/dev/unity/procadia2017/Assets/hard/seed.clj",
+		"/C/dev/unity/procadia2017/Assets/hard/core.clj",
+		"/C/dev/unity/procadia2017/Assets/shaders/standard-vertex.shader",
+		"/C/dev/unity/procadia2017/procadia.sublime-project",
+		"/C/dev/unity/cljvr/arcadia.sublime-project",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/ecs.p8",
+		"/C/dev/alien/coffee/generate.coffee",
+		"/C/Users/selfsame/Desktop/iga/iga.lua",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/jswfc/index.html",
+		"/C/Users/selfsame/AppData/Roaming/Sublime Text 3/Packages/User/PICO-8.sublime-settings",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/model.js",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/jswfc/js/model.js",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/overlap.js",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/model.cs",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/overlap.cs",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/demos/buckethash.p8",
+		"/C/Users/selfsame/AppData/Local/Temp/7zE04D0A49D/iga.lua",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/demos/butterfly.p8",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/pico8-ec.p8",
+		"/C/Users/selfsame/AppData/Roaming/pico-8/carts/alien_archaeologist.p8",
+		"/C/dev/alien/coffee/blocks.coffee",
+		"/C/dev/alien/coffee/entity_constructor.coffee",
+		"/C/dev/alien/coffee/classes.coffee",
+		"/C/dev/alien/coffee/game.coffee",
+		"/C/dev/alien/coffee/boids.coffee",
+		"/C/dev/alien/coffee/fun.coffee",
+		"/C/Users/selfsame/AppData/Roaming/Sublime Text 3/Packages/User/PICO-8.sublime-build",
+		"/C/Users/selfsame/AppData/Roaming/Sublime Text 3/Packages/PICO-8/pico_run_cart.py",
+		"/C/Users/selfsame/AppData/Roaming/Sublime Text 3/Packages/PICO-8/PICO-8.sublime-commands",
+		"/C/Users/selfsame/AppData/Roaming/Sublime Text 3/Packages/PICO-8/PICO-8.tmLanguage",
+		"/C/Users/selfsame/AppData/Roaming/Sublime Text 3/Packages/arcadia-repl/Clojure.sublime-settings",
+		"/C/dev/sculptgl/README.md",
+		"/C/dev/sculptgl/src/mesh/Mesh.js",
+		"/C/dev/sculptgl/src/drawables/Primitives.js",
+		"/C/dev/sculptgl/src/gui/GuiFiles.js",
+		"/C/dev/sculptgl/src/editing/Remesh.js",
+		"/C/dev/sculptgl/src/drawables/frame.js",
+		"/C/dev/sculptgl/src/mesh/UIMesh.js",
+		"/C/dev/sculptgl/src/files/ImportPLY.js",
+		"/C/dev/sculptgl/src/gui/GuiTopology.js",
+		"/C/dev/unity/cljvr/Assets/SteamVR/Scripts/SteamVR_UpdatePoses.cs",
+		"/C/dev/unity/cljvr/Assets/SteamVR/Extras/SteamVR_TrackedController.cs",
+		"/C/dev/unity/cljvr/Assets/game/todo.clj",
+		"/C/dev/unity/cljvr/Assets/hard/core.clj",
+		"/C/dev/unity/cljvr/Assets/SteamVR/Scripts/SteamVR_TestController.cs",
+		"/C/dev/unity/cljvr/Assets/Arcadia/Source/arcadia/core.clj",
+		"/C/dev/unity/cljvr/Assets/repl/core.clj",
+		"/C/dev/unity/cljvr/.gitignore",
+		"/C/dev/unity/cljvr/Assets/shaders/vertex-shadow-diffuse.shader",
+		"/C/dev/unity/pelatra/pelatra_latest/Assets/workout1.json",
+		"/C/dev/Arcadia/README.md",
+		"/C/Users/selfsame/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/dev/unity/cljvr/Assets/tween/core.clj",
+		"/C/Users/selfsame/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 109.0,
+		"where_history":
+		[
+			"C:\\dev\\sculptgl\\src",
+			"C:\\dev\\unity\\cljvr\\Assets\\SteamVR",
+			"C:\\dev\\unity\\cljvr\\Assets\\Arcadia\\Source\\arcadia"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"lerp",
+			"gun-update",
+			"SWAPPED",
+			"life",
+			"collide",
+			"_f",
+			"_F",
+			"clear",
+			"ground",
+			"grideach",
+			"clear",
+			"ground",
+			"periodic",
+			"periodic_output",
+			"ground",
+			"print_pattern",
+			"grideach",
+			"contains",
+			"tcount",
+			"periodicInput",
+			"periodic_input",
+			"periodic",
+			"_f",
+			"])",
+			"spr",
+			"10",
+			"periodicInput",
+			"periodic_input",
+			"update_tile",
+			"!",
+			"count",
+			"if",
+			"a",
+			"vrinit",
+			"onControllerMove",
+			"WEBVR",
+			"_lastMouseX",
+			"picking",
+			"vec3",
+			"updateMoveDir",
+			"dir",
+			"controllerDistance",
+			"_mesh.scale",
+			"initialS",
+			"this.initialS",
+			"this.S",
+			"60",
+			"57",
+			"getRotation",
+			"optimizePostTransform",
+			"optimize",
+			"optimizePostTransform",
+			"fArUV.set",
+			"new Mesh",
+			"allocateArrays",
+			"initTopology",
+			"_nbVertices",
+			"initialS",
+			"mat4.rotate",
+			"inverse",
+			"LTI",
+			"material-color",
+			"Haptic",
+			"HapticsOnTouch",
+			"EVRButtonId.k_EButton_SteamVR",
+			"k_EButton_SteamVR_Touchpad",
+			"EVRButtonId",
+			"Device",
+			"find-component",
+			"camel"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.763048016701,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 187.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/PICO-8.sublime-build",
+	"project": "ld41.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 147.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
