@@ -54,3 +54,6 @@
 (( ) main screen)
 (( ) transition effect when changing area)
 (( ) town music)
+
+[Bugs]
+(( ) fix car bounds)

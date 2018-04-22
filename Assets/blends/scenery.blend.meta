@@ -19,6 +19,14 @@ ModelImporter:
     100022: street
     100024: street-corner
     100026: streetlight
+    100028: dealership_building
+    100030: lot
+    100032: backdrop
+    100034: apartment
+    100036: box
+    100038: factory
+    100040: line
+    100042: paper
     400000: building-blue
     400002: building-blue-ground
     400004: building-brick
@@ -33,6 +41,14 @@ ModelImporter:
     400022: street
     400024: street-corner
     400026: streetlight
+    400028: dealership_building
+    400030: lot
+    400032: backdrop
+    400034: apartment
+    400036: box
+    400038: factory
+    400040: line
+    400042: paper
     2100000: Material
     2100002: unnamed
     2300000: building-blue
@@ -48,6 +64,14 @@ ModelImporter:
     2300020: street
     2300022: street-corner
     2300024: streetlight
+    2300026: dealership_building
+    2300028: lot
+    2300030: backdrop
+    2300032: apartment
+    2300034: box
+    2300036: factory
+    2300038: line
+    2300040: paper
     3300000: building-blue
     3300002: building-blue-ground
     3300004: building-brick
@@ -61,6 +85,14 @@ ModelImporter:
     3300020: street
     3300022: street-corner
     3300024: streetlight
+    3300026: dealership_building
+    3300028: lot
+    3300030: backdrop
+    3300032: apartment
+    3300034: box
+    3300036: factory
+    3300038: line
+    3300040: paper
     4300000: onramp
     4300002: roof
     4300004: building-blue
@@ -74,6 +106,14 @@ ModelImporter:
     4300020: Cube_001
     4300022: Cube
     4300024: dealer-lot
+    4300026: dealership_building
+    4300028: lot
+    4300030: backdrop
+    4300032: apartment
+    4300034: factory
+    4300036: paper
+    4300038: box
+    4300040: line
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

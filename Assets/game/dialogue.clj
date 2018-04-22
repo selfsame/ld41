@@ -47,26 +47,28 @@
     (catch Exception e)))
 
 (defn make-dialogue [who story opts]
-  (when @DIALOGUE
-    (destroy-immediate @DIALOGUE))
-  (let [canvas (the Canvas)
-        dialogue (clone! :ui/dialogue)]
-    (ui-parent! dialogue canvas)
-    (reset! DIALOGUE dialogue)
-    (set! (.text (cmpt (child-named dialogue "who") UnityEngine.UI.Text)) who)
-    (set! (.text (cmpt (child-named dialogue "story") UnityEngine.UI.Text)) story)
-    (state+ dialogue :active 0)
-    (hook+ dialogue :update #'update-dialogue)
-    (state+ dialogue :options 
-      (vec
-        (map-indexed 
-          (fn [i [s f]]
-            (let [option (clone! :ui/option)]
-              (ui-parent! option dialogue)
-              (set! (.text (cmpt option UnityEngine.UI.Text)) s)
-              (set! (.position (cmpt option RectTransform))
-                (v3+ (.position (cmpt option RectTransform))
-                     (v3* (v3 0 -10 0) i)))
-              (state+ option :f f)
-              option))
-          opts)))))
+  (try 
+    (when @DIALOGUE
+      (destroy-immediate @DIALOGUE))
+    (let [canvas (the Canvas)
+          dialogue (clone! :ui/dialogue)]
+      (ui-parent! dialogue canvas)
+      (reset! DIALOGUE dialogue)
+      (set! (.text (cmpt (child-named dialogue "who") UnityEngine.UI.Text)) who)
+      (set! (.text (cmpt (child-named dialogue "story") UnityEngine.UI.Text)) story)
+      (state+ dialogue :active 0)
+      (hook+ dialogue :update #'update-dialogue)
+      (state+ dialogue :options 
+        (vec
+          (map-indexed 
+            (fn [i [s f]]
+              (let [option (clone! :ui/option)]
+                (ui-parent! option dialogue)
+                (set! (.text (cmpt option UnityEngine.UI.Text)) s)
+                (set! (.position (cmpt option RectTransform))
+                  (v3+ (.position (cmpt option RectTransform))
+                       (v3* (v3 0 -15 0) i)))
+                (state+ option :f f)
+                option))
+            opts))))
+    (catch Exception e (reset! DIALOGUE nil))))

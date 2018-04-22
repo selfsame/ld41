@@ -22,7 +22,7 @@
     (let [cpos (.position (.transform o))]
       (set! (.position (.transform o))
         (Vector3/Lerp cpos 
-          (v3 (.x (>v3 @PLAYER)) (.y cpos) (.z cpos)) 0.1)))))
+          (v3 (.x (>v3 @PLAYER)) (.y cpos) (+ -14 (.z (>v3 @PLAYER)))) 0.1)))))
 
 (defn entity-update [o _]
   (let [control (cmpt o Control)
@@ -30,8 +30,10 @@
         z (.v control)
         rb (->rigidbody o)
         v (.velocity rb)
-        nv (v3+ (v3* (v3 x 0 z) 6) (v3 0  (.y v) 0))
-        body (get (children o) 0)]
+        speed (if (and (= o @PLAYER) (:car @STATE)) 1.6 1.0)
+        nv (v3+ (v3* (v3 x 0 z) (* 6 speed)) (v3 0  (.y v) 0))
+        body (get (children o) 0)
+        ]
     (set! (.velocity rb) nv)
     (param-float body "jogspeed" (* (.magnitude nv) 0.3))
     (if (> (.magnitude (v3 (.x nv) 0 (.z nv))) 0.02)
@@ -55,7 +57,8 @@
     (hook+ o :update :entity #'entity-update)
     (hook+ o :update #'player-update)
     (when (:car @STATE)
-      (car! o))
+      (when-not (the indoors)
+        (car! o)))
     o))
 
 

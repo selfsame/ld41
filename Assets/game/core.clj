@@ -33,7 +33,9 @@
     (set! (.text money) (str @COINS))
     (set! (.text clock) (str 
       (get months @MONTH) " " @DAY "\n" (:hours -time) ":" (:minutes -time)
-      (if (< (:hours -time) 13) "AM" "PM")))))
+      (if (< (:hours -time) 13) "AM" "PM")))
+    (when (> (:hours -time) 22)
+      (action! "curfew" nil))))
 
 (defn player-trigger-enter [o c _]
   (when-let [portal (cmpt (.gameObject c) Portal)]
@@ -49,6 +51,7 @@
     (set! (.active portal) true)))
 
 (defn load-area [area portal]
+  (reset! DIALOGUE nil)
   (clear-cloned!)
   (defer
     (clone! :sun)
@@ -80,6 +83,7 @@
 (register-fn load-area :load-area)
 
 (defn start [o _]
+  (reset! DIALOGUE nil)
   (reset! TIME UnityEngine.Time/time)
   (reset! DAY 1)
   (reset! MONTH 1)
@@ -87,35 +91,28 @@
   (reset! STATE {
     :daybills {"food" 26}
     })
-  (load-area "areas/village" nil))
+  (load-area "areas/town" nil))
 
 
 (reset! DAYFN
   (fn []
     (let [bills (:daybills @STATE)
           total (reduce + (vals bills))]
-    (when-not @DIALOGUE
-      (swap! COINS #(- % total))
-    (make-dialogue "TIME" 
-  (str "Daily Bills:\n"
-    (apply str (map #(str (first %) " - " (last %) "\n") bills))) 
-  [
-  ["just another day."] ])))
-    ))
+      (timeline* 
+        (fn [] @DIALOGUE)
+        (fn [] 
+          (if @DIALOGUE true
+            (do 
+          (swap! COINS #(- % total))
+          (make-dialogue "TIME" 
+            (str "Daily Bills:\n"
+              (apply str (map #(str (first %) " - " (last %) "\n") bills))) 
+            [["just another day."] ])
+          nil)))))))
 
 
-
-
-'(make-dialogue "SALES ASSOCIATE" 
-  "  This is a 2014 Hondola Drivera with 148,000 miles.
-
-  Would you like to buy it for a downpayment of 4,680???" [
-  ["BUY CAR" 
-    (fn [] (swap! COINS #(- % 4680))
-      (car! @PLAYER)
-      (swap! STATE assoc :car true))]
-  ["no"] ])
 
 '(start nil nil)
 '(hook+ (the hook) :start #'start)
 
+'(load-area :areas/factory nil)

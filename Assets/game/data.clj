@@ -1,6 +1,7 @@
 (ns game.data
   (use
-    arcadia.core))
+    arcadia.core
+    tween.core))
 
 (defonce PLAYER (atom nil))
 (defonce AREA (atom nil))
@@ -16,7 +17,12 @@
   (when-let [f (get @FNS k)] (apply f args)))
 
 (def animal-heads [
-  :heads/cat-head])
+  :heads/cat-head
+  :heads/crow-head
+  :heads/cat-head
+  :heads/crow-head
+  ;:heads/rent-seeker
+  :heads/boy-head])
 
 (defmacro milestone [k & code]
   `(~'when-not (~'get ~'@STATE ~k)
@@ -33,6 +39,8 @@
   "Marchember"
   "Janril"])
 
+(def timescale 22)
+
 (def TIME (atom UnityEngine.Time/time))
 (def DAY (atom 1))
 (def MONTH (atom 1))
@@ -42,16 +50,25 @@
 
 (defn daytime []
   (let [elapsed (- UnityEngine.Time/time @TIME)
-        hours (/ elapsed 1 #_30 )
+        hours (/ elapsed timescale )
         minutes (mod hours 1)
         hours (int hours)
         minutes (int (* minutes 60))]
     (when (> hours 23)
       (swap! DAY inc)
       (reset! TIME UnityEngine.Time/time)
-      (@DAYFN)
-      (when (> @DAY 30)
+      (@DAYFN))
+    (when (> @DAY 30)
         (reset! DAY 1)
         (swap! MONTH inc)
-        (@MONTHFN)))
+        (@MONTHFN))
     {:hours hours :minutes minutes}))
+
+
+(defn next-day [hours]
+  (let [offset (* hours timescale)]
+    (reset! TIME (- UnityEngine.Time/time offset))
+    (swap! DAY inc)
+    (timeline* 
+      (wait 0.2)
+      (fn [] (@DAYFN) nil))))

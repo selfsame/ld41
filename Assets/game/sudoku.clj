@@ -67,11 +67,13 @@
 
 (defn new-game [pat]
   (defer- 
+    (reset! DIALOGUE true)
     (clear-cloned!)
     (clone! :sun)
     (clone! :sudoku-cam)
     (clone! :circle)
     (clone! :sudoku-canvas)
+    (clone! :sudoku-background)
     (setup-tippy)
     (let [board (clone! :board)]
       (state+ board :pattern (atom pat))
