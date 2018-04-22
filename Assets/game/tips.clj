@@ -71,7 +71,7 @@
       (tween {:local {:position (v3 0 -5 0)}} @TIPPY 0.8 {:out :pow3}))))
 
 
-'(tip! "audio/hello-tippy" "frog-lecture")
+'(tip! "audio/hello-tippy" "frog-crazy")
 
 '(setup-tippy)
 

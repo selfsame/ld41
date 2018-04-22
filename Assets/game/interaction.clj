@@ -6,7 +6,8 @@
     tween.core
     game.player
     game.data
-    game.dialogue)
+    game.dialogue
+    game.tips)
   (import
     [UnityEngine GameObject Debug Mathf]
     Portal
@@ -22,13 +23,18 @@
     (~'fn ~args ~@code)))
 
 (defn action! [k c]
-  (when-let [f (get ACTIONS k)]
+  (when-let [f (get @ACTIONS k)]
     (f c)))
 
 
 (defaction landlord [c]
-  (make-dialogue "LANDLORD" 
-  "I see you've moved in...
+  (milestone :landlord/welcome
+    (make-dialogue "LANDLORD" 
+    "I see you've moved in...
 
-  Remember rent is due at the end of the month, no rent - no apartment!" [
-  ["ok" ] ]))
+    Remember rent is due at the end of the month, no rent - no apartment!" [
+    ["ok" ] ])))
+
+(defaction "areas/village" [c]
+  (milestone :village/welcome
+    (tip! "audio/hello-tippy" "frog-crazy")))

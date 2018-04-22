@@ -38,7 +38,10 @@
       (lerp-look! o (v3+ (>v3 o) (v3 (.x nv) 0 (.z nv))) 0.1))))
 
 (defn player-update [o _]
-  (when-not @DIALOGUE
+  (if @DIALOGUE
+    (let [control (cmpt o Control)]
+      (set! (.h control) 0)
+      (set! (.v control) 0))
     (let [control (cmpt o Control)
           x (get-axis :horizontal)
           z (get-axis :vertical)]

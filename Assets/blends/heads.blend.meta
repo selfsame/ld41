@@ -10,25 +10,40 @@ ModelImporter:
     100004: Icosphere_001
     100006: hair
     100008: cat-head
+    100010: square-blue
+    100012: square-gray
+    100014: circle
     400000: boy-head
     400002: //RootNode
     400004: Icosphere_001
     400006: hair
     400008: cat-head
+    400010: square-blue
+    400012: square-gray
+    400014: circle
     2100000: VERTEX
     2100002: unnamed
     2300000: boy-head
     2300002: Icosphere_001
     2300004: hair
     2300006: cat-head
+    2300008: square-blue
+    2300010: square-gray
+    2300012: circle
     3300000: boy-head
     3300002: Icosphere_001
     3300004: hair
     3300006: cat-head
+    3300008: square-blue
+    3300010: square-gray
+    3300012: circle
     4300000: Icosphere_001
     4300002: boy-head
     4300004: hair
     4300006: cat-head
+    4300008: square-gray
+    4300010: square-blue
+    4300012: circle
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

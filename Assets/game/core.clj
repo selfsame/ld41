@@ -25,16 +25,22 @@
 
 
 (defn update-ui [o _]
-  (let [money (cmpt (child-named o "coins") UnityEngine.UI.Text)
+  (let [-time (daytime)
+        money (cmpt (child-named o "coins") UnityEngine.UI.Text)
+        clock (cmpt (child-named o "time") UnityEngine.UI.Text)
         size (if (pos? @COINS) 0 (+ 0.6 (* 1.5 (abs (cos (* UnityEngine.Time/time 4))))))]
     (set! (.localScale (cmpt (the poor) UnityEngine.RectTransform)) (v3 size))
-    (set! (.text money) (str @COINS))))
+    (set! (.text money) (str @COINS))
+    (set! (.text clock) (str 
+      (get months @MONTH) " " @DAY "\n" (:hours -time) ":" (:minutes -time)
+      (if (< (:hours -time) 13) "AM" "PM")))))
 
 (defn player-trigger-enter [o c _]
   (when-let [portal (cmpt (.gameObject c) Portal)]
     (when (.active portal)
       (load-area (.area portal) (.portal portal))))
   (when-let [action (cmpt (.gameObject c) Interaction)]
+    (log action)
     (when (.active action)
       (action! (.key action) action))))
 
@@ -69,16 +75,33 @@
         (map 
           (fn [s]
             (make-animal (>v3 s) (rand-nth animal-heads) #'game.player/wander))
-          (objects-tagged "spawn"))))))
+          (objects-tagged "spawn")))
+      (action! area nil))))
 (register-fn load-area :load-area)
 
 (defn start [o _]
+  (reset! TIME UnityEngine.Time/time)
+  (reset! DAY 1)
+  (reset! MONTH 1)
   (reset! COINS 100)
-  (reset! STATE {})
+  (reset! STATE {
+    :daybills {"food" 26}
+    })
   (load-area "areas/village" nil))
 
 
-
+(reset! DAYFN
+  (fn []
+    (let [bills (:daybills @STATE)
+          total (reduce + (vals bills))]
+    (when-not @DIALOGUE
+      (swap! COINS #(- % total))
+    (make-dialogue "TIME" 
+  (str "Daily Bills:\n"
+    (apply str (map #(str (first %) " - " (last %) "\n") bills))) 
+  [
+  ["just another day."] ])))
+    ))
 
 
 

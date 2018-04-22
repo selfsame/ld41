@@ -20,29 +20,31 @@
   (reset! DIALOGUE nil))
 
 (defn update-dialogue [o _]
-  (let []
-    (dorun (map-indexed
-      (fn [i option]
-        (if (= (state o :active) i)
-          (set! (.color (cmpt option UnityEngine.UI.Text)) (color 1 0 0))
-          (set! (.color (cmpt option UnityEngine.UI.Text)) (color 1 1 0))))
-      (state o :options)))
-    (cond 
-      (key-down? "s")
-      (state+ o :active 
-        (if (< (state o :active) (dec (count (state o :options))))
-            (inc (state o :active))
-            0))
-      (key-down? "w")
-      (state+ o :active 
-        (if (> (state o :active) 0)
-            (dec (state o :active))
-            (dec (count (state o :options)))))
-      (or (key-down? "return")(key-down? "e"))
-      (let [option (get (state o :options) (state o :active))]
-        (let [f (state option :f)]
-          (clear-dialogue)
-          (f))))))
+  (try 
+    (let []
+      (dorun (map-indexed
+        (fn [i option]
+          (if (= (state o :active) i)
+            (set! (.color (cmpt option UnityEngine.UI.Text)) (color 1 0 0))
+            (set! (.color (cmpt option UnityEngine.UI.Text)) (color 1 1 0))))
+        (state o :options)))
+      (cond 
+        (key-down? "s")
+        (state+ o :active 
+          (if (< (state o :active) (dec (count (state o :options))))
+              (inc (state o :active))
+              0))
+        (key-down? "w")
+        (state+ o :active 
+          (if (> (state o :active) 0)
+              (dec (state o :active))
+              (dec (count (state o :options)))))
+        (or (key-down? "return")(key-down? "e"))
+        (let [option (get (state o :options) (state o :active))]
+          (let [f (state option :f)]
+            (clear-dialogue)
+            (f)))))
+    (catch Exception e)))
 
 (defn make-dialogue [who story opts]
   (when @DIALOGUE
