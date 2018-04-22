@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1867204593193086}
   m_IsPrefabParent: 1
+--- !u!1 &1143550044190448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4850872978001472}
+  m_Layer: 0
+  m_Name: mount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1867204593193086
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,6 +37,8 @@ GameObject:
   - component: {fileID: 20002746085419784}
   - component: {fileID: 124024528108708094}
   - component: {fileID: 81551998855228532}
+  - component: {fileID: 114524882833961362}
+  - component: {fileID: 114273696242314012}
   m_Layer: 0
   m_Name: village-camera
   m_TagString: MainCamera
@@ -36,12 +53,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867204593193086}
   m_LocalRotation: {x: 0.17332156, y: 0, z: 0, w: 0.9848653}
-  m_LocalPosition: {x: 0, y: 8, z: -16.4}
+  m_LocalPosition: {x: -1.3267318, y: 8, z: -16.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4850872978001472}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 19.962002, y: 0, z: 0}
+--- !u!4 &4850872978001472
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143550044190448}
+  m_LocalRotation: {x: -0, y: 0.9330478, z: -0, w: -0.35975248}
+  m_LocalPosition: {x: 2.1, y: -2.7, z: 3.4}
+  m_LocalScale: {x: 0.47611302, y: 0.47611272, z: 0.47611287}
+  m_Children: []
+  m_Father: {fileID: 4621421386281018}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20002746085419784
 Camera:
   m_ObjectHideFlags: 1
@@ -86,6 +117,34 @@ AudioListener:
   m_GameObject: {fileID: 1867204593193086}
   m_Enabled: 1
   m_ExtensionPropertyValues: []
+--- !u!114 &114273696242314012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867204593193086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c8aedeab7cb421da9a055c86933987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edn: '[{:arcadia.internal.hook-help/key :default, :arcadia.internal.hook-help/fn
+    #''game.player/camera-update, :arcadia.internal.hook-help/pamv-data [:default]}]'
+  arcadiaState: {fileID: 114524882833961362}
+--- !u!114 &114524882833961362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867204593193086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bab27575ee84411b029b5f5e98734f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edn: '{}'
+  objectDatabaseIds: 
+  objectDatabaseObjects: []
 --- !u!124 &124024528108708094
 Behaviour:
   m_ObjectHideFlags: 1

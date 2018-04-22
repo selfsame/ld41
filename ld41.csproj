@@ -223,20 +223,20 @@
     <Reference Include="Clojure">
       <HintPath>Assets\Arcadia\Infrastructure\Clojure.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Scripting">
-      <HintPath>Assets\Arcadia\Infrastructure\Microsoft.Scripting.dll</HintPath>
-    </Reference>
     <Reference Include="Ionic.Zip">
       <HintPath>Assets\Arcadia\Infrastructure\Ionic.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Scripting.Metadata">
-      <HintPath>Assets\Arcadia\Infrastructure\Microsoft.Scripting.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamic">
       <HintPath>Assets\Arcadia\Infrastructure\Microsoft.Dynamic.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Scripting.Core">
       <HintPath>Assets\Arcadia\Infrastructure\Microsoft.Scripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>Assets\Arcadia\Infrastructure\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata">
+      <HintPath>Assets\Arcadia\Infrastructure\Microsoft.Scripting.Metadata.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -335,6 +335,9 @@
     <Compile Include="Assets\hard\PointOctree.cs" />
     <Compile Include="Assets\hard\PointOctreeNode.cs" />
     <Compile Include="Assets\hard\Pooled.cs" />
+    <Compile Include="Assets\scripts\Amplitude.cs" />
+    <Compile Include="Assets\scripts\Control.cs" />
+    <Compile Include="Assets\scripts\Interaction.cs" />
     <Compile Include="Assets\scripts\Portal.cs" />
     <Compile Include="Assets\tween\MonoObj.cs" />
     <Compile Include="Assets\tween\pairs\ColorPair.cs" />
