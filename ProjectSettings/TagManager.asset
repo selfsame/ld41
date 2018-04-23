@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - clone
+  - pooled
   - spawn
   - option
   layers:
@@ -17,7 +19,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - clone
   - 
   - 
   - 
