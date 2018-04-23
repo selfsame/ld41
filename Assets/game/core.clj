@@ -3,6 +3,7 @@
     arcadia.core
     arcadia.linear
     hard.core
+    hard.input
     tween.core
     game.player
     game.data
@@ -110,9 +111,26 @@
             [["just another day."] ])
           nil)))))))
 
+(reset! MONTHFN
+  (fn []
+    (swap! STATE assoc :finished true)
+    (load-area :areas/game-over nil)
+    (timeline*
+      (wait 0.5)
+      (tip! "audio/lose" "frog-lecture"))))
+
+
+(defn intro [o _]
+  (clear-cloned!)
+  (let [intro (clone! :intro)]
+    (hook+ intro :update
+      (fn [o _]
+        (if (key-down? "space")
+          (start nil nil))))))
 
 
 '(start nil nil)
-'(hook+ (the hook) :start #'start)
+'(hook+ (the hook) :start #'intro)
 
 '(load-area :areas/factory nil)
+

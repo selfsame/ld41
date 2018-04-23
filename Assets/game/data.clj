@@ -1,7 +1,9 @@
 (ns game.data
   (use
     arcadia.core
-    tween.core))
+    tween.core)
+  (require
+    clojure.core.server))
 
 (defonce PLAYER (atom nil))
 (defonce AREA (atom nil))
@@ -39,7 +41,7 @@
   "Marchember"
   "Janril"])
 
-(def timescale 22)
+(def timescale 15)
 
 (def TIME (atom UnityEngine.Time/time))
 (def DAY (atom 1))
@@ -54,14 +56,15 @@
         minutes (mod hours 1)
         hours (int hours)
         minutes (int (* minutes 60))]
-    (when (> hours 23)
-      (swap! DAY inc)
-      (reset! TIME UnityEngine.Time/time)
-      (@DAYFN))
-    (when (> @DAY 30)
-        (reset! DAY 1)
-        (swap! MONTH inc)
-        (@MONTHFN))
+    (when-not (:finished @STATE)
+      (when (> hours 23)
+        (swap! DAY inc)
+        (reset! TIME UnityEngine.Time/time)
+        (@DAYFN))
+      (when (> @DAY 30)
+          (reset! DAY 1)
+          (swap! MONTH inc)
+          (@MONTHFN)))
     {:hours hours :minutes minutes}))
 
 

@@ -45,9 +45,9 @@
 ((/) sudoku factory
   ((x) viable sudoku game)
   (( ) puzzle variations)
-  (( ) background for puzzle view)
+  ((x) background for puzzle view)
   (( ) clock out at 5)
-  (( ) area))
+  ((x) area))
 
 
 [Polish]

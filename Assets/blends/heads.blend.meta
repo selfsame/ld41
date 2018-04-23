@@ -15,6 +15,7 @@ ModelImporter:
     100014: circle
     100016: crow-head
     100018: rent-seeker
+    100020: SUDOKU
     400000: boy-head
     400002: //RootNode
     400004: Icosphere_001
@@ -25,6 +26,7 @@ ModelImporter:
     400014: circle
     400016: crow-head
     400018: rent-seeker
+    400020: SUDOKU
     2100000: VERTEX
     2100002: unnamed
     2300000: boy-head
@@ -36,6 +38,7 @@ ModelImporter:
     2300012: circle
     2300014: crow-head
     2300016: rent-seeker
+    2300018: SUDOKU
     3300000: boy-head
     3300002: Icosphere_001
     3300004: hair
@@ -45,6 +48,7 @@ ModelImporter:
     3300012: circle
     3300014: crow-head
     3300016: rent-seeker
+    3300018: SUDOKU
     4300000: Icosphere_001
     4300002: boy-head
     4300004: hair
@@ -54,6 +58,7 @@ ModelImporter:
     4300012: circle
     4300014: crow-head
     4300016: rent-seeker
+    4300018: SUDOKU
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

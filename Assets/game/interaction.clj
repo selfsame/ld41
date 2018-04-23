@@ -36,10 +36,6 @@
     Remember rent is due at the end of the month, no rent - no apartment!" [
     ["ok" ] ])))
 
-(defaction "areas/village" [c]
-  (milestone :village/welcome
-    (tip! "audio/hello-tippy" "frog-crazy")))
-
 (defaction associate [c]
   (if-not (:car @STATE)
     (make-dialogue "SALES ASSOCIATE" 
@@ -80,3 +76,28 @@
 
 (defaction work [c]
   (new-game pattern))
+
+
+
+
+
+(defaction "areas/town" [c]
+  (milestone :village/welcome
+    (tip! "audio/welcome" "frog-crazy")))
+
+(defaction "areas/apartment" [c]
+  (milestone :apartment/welcome
+    (tip! "audio/apartment" "frog-lecture")))
+
+(defaction "areas/industrial" [c]
+  (milestone :industrial/welcome
+    (tip! "audio/industrial" "frog-idle")))
+
+(defaction "areas/factory" [c]
+  (log "factory??")
+  (milestone :factory/welcome
+    (tip! "audio/factory" "frog-crazy")))
+
+(defaction "areas/game-over" [c]
+  (milestone :game-over
+    (tip! "audio/lose" "frog-lecture")))

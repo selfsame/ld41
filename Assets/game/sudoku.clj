@@ -8,7 +8,8 @@
     hard.animation
     tween.core
     game.data
-    game.tips)
+    game.tips
+    game.dialogue)
   (import
     [UnityEngine GameObject Debug Vector3 RectTransform]))
 
@@ -31,6 +32,11 @@
   [1 0 3 0 5 0 0 0 0]
   [0 0 0 0 0 3 0 0 0]
   [6 0 0 2 1 9 5 4 0]])
+
+(defn shuffle-pattern [pat]
+  (if (< (rand) 0.5)
+    (vec (reverse pat))
+    (mapv #(vec (reverse %)) pat)))
 
 
 (def digits #{1 2 3 4 5 6 7 8 9})
@@ -62,7 +68,17 @@
         (state+ active :n n)
         (text! (first (children active)) (str n))
         (swap! (state o :pattern) assoc-in [y x] n)
-        (check-solved @(state o :pattern)))))))
+        (check-solved @(state o :pattern))))))
+  (when (> (:hours (daytime)) 17)
+    (do-fn :load-area "areas/factory" nil)
+    (timeline* 
+      (wait 0.2)
+      (fn [] 
+        (if @DIALOGUE true
+          (do 
+            (make-dialogue "TIME" 
+            "Time to clock out!\n\nAnother day another moneycoin..." [
+            ["whew"] ]) nil))))))
 
 
 (defn new-game [pat]
@@ -99,8 +115,10 @@
         (tween {:position (v3 0 0 0)} board 1.0 {:in :pow2 :out :pow2})))))
 
 (defn win-sudoku []
-  (swap! COINS #(+ % 25))
+  (swap! COINS #(+ % 80))
+  (tip! (rand-nth ["audio/sudoku2" "audio/sudoku1"]) "frog-crazy")
   (timeline*
+    (wait 3.0)
     (tween {:position (v3 -30 0 0)} (the board) 1.0 {:in :pow2 :out :pow2})
     (fn [] 
       (new-game pattern) nil)))
